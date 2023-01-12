@@ -12,6 +12,8 @@ app_name = 'social'
 
 urlpatterns = [
     # authentication / association
+    path(f'login/<str:backend>/<str:redirect_url>{extra}', views.auth,
+         name='begin with redirect param'),
     path(f'login/<str:backend>{extra}', views.auth,
          name='begin'),
     path(f'complete/<str:backend>{extra}', views.complete,
